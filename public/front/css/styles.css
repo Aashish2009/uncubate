@@ -1,0 +1,174 @@
+/* Import Fonts */
+@import url(http://fonts.googleapis.com/css?family=Coustard|Open+Sans);
+
+body {
+	font-family: arial, sans-serif;
+	font-size: 18px;
+	line-height: 21px;
+	font-weight:400;
+	-webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+  overflow-x: hidden;
+  background: url('background.png');
+}
+h6{
+	font-size: small;
+	font-family: open sans;
+	color: #000;
+}
+.container{
+	text-align: center;
+}
+h1, h2, h3, h4, h5 {
+	font-family: 'Coustard', serif;
+	color:#000;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+h1{font-size: 35px; line-height: 70px; padding: 0; margin: 0; font-style: italic;}
+h5{font-size: 22px; line-height: 35px; padding: 0; margin: 0;}
+
+a {
+	color: #b7b7b7;
+	text-decoration:none;
+	font-weight: normal;
+}
+a:hover {text-decoration:underline;}
+ 
+ #sclogo {
+ 	width:75px;
+
+ }
+
+#unlogo{
+	width: 400px;
+  margin-top: 10%
+}
+
+
+.btn-success:hover{
+	border-color:  #12261B;
+	background-color:  #12261B;
+}
+.btn-success{
+	border-color: #12261B;
+	background-color: #12261B;
+}
+
+.content { 
+	float:left;
+	margin:50px;
+	position:relative;
+	top:100px;
+	z-index:9999;
+	-webkit-font-smoothing:antialiased;
+}
+
+
+
+
+#light{
+    position: relative;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top:5%;
+    padding: 10px;
+    background: #62c291;
+    z-index: 1002;
+    overflow: visible;
+    opacity: 0.8;
+}
+#border{
+  width: 50%;
+}
+#text{
+  font-size: 1.5em;
+}
+
+ #intiative{
+ width: 215px;
+    font-size: small;
+
+   }
+
+
+
+@media screen and (max-width: 699px) and (min-width: 350px) {
+
+
+   .container{
+   	margin-left: -30px;
+   	margin-right: 15px;
+   }
+
+   #unlogo{
+   	width: 200px;
+   }
+   .btn-success{
+   	margin-top: 2%;
+   }
+   #text{
+    font-size: 0.8em;
+   
+   }
+   #space{
+    font-size: smaller;
+   }
+   #border{
+    font-size: small;
+    width: 80%
+   }
+
+}
+
+
+
+@media screen and (max-width: 1350px) and (min-width: 1200px) {
+   .container{
+   	margin-left: 0px;
+   
+   }
+   #border{
+    width: 50%;
+   }
+   #unlogo{
+   	width: 400px;
+   }
+
+ #text{
+    font-size: 1em;
+   }
+
+    #space{
+    font-size: large;
+   }
+   
+ }
+
+ @media screen and (min-width: 1400px) {
+  #border{
+    width: 34%;
+  }
+   .container{
+   	margin-left: 15%;
+   
+   }
+  #unlogo{
+    width: 400px;
+    margin-top:5%;
+   }
+   #text{
+    font-size: 1em;
+   }
+   #space{
+    font-size: large;
+   }
+  
+
+
+  
+ 
+ }
+
+

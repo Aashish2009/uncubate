@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="origin-when-crossorigin">
+<title>Export: ags_monitor - Adminer</title>
+<link rel="stylesheet" type="text/css" href="adminer.php?file=default.css&amp;version=4.2.4&amp;driver=mysql">
+<script type="text/javascript" src="adminer.php?file=functions.js&amp;version=4.2.4&amp;driver=mysql"></script>
+<link rel="shortcut icon" type="image/x-icon" href="adminer.php?file=favicon.ico&amp;version=4.2.4&amp;driver=mysql">
+<link rel="apple-touch-icon" href="adminer.php?file=favicon.ico&amp;version=4.2.4&amp;driver=mysql">
+<link rel="stylesheet" type="text/css" href="adminer.css">
+
+<body class="ltr nojs" onkeydown="bodyKeydown(event);" onclick="bodyClick(event);">
+<script type="text/javascript">
+document.body.className = document.body.className.replace(/ nojs/, ' js');
+var offlineMessage = 'You are offline.';
+</script>
+
+<div id="help" class="jush-sql jsonly hidden" onmouseover="helpOpen = 1;" onmouseout="helpMouseout(this, event);"></div>
+
+<div id="content">
+<p id="breadcrumb"><a href="adminer.php?server=localhost">MySQL</a> &raquo; <a href='adminer.php?server=localhost&amp;username=root' accesskey='1' title='Alt+Shift+1'>localhost</a> &raquo; <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor">ags_monitor</a> &raquo; Export
+<h2>Export: ags_monitor</h2>
+<div id='ajaxstatus' class='jsonly hidden'></div>
+
+<form action="" method="post">
+<table cellspacing="0">
+<tr><th>Output<td><label><input type='radio' name='output' value='text'>open</label><label><input type='radio' name='output' value='file' checked>save</label><label><input type='radio' name='output' value='gz'>gzip</label>
+<tr><th>Format<td><label><input type='radio' name='format' value='sql' checked>SQL</label><label><input type='radio' name='format' value='csv'>CSV,</label><label><input type='radio' name='format' value='csv;'>CSV;</label><label><input type='radio' name='format' value='tsv'>TSV</label>
+<tr><th>Database<td><select name='db_style'><option selected><option>USE<option>DROP+CREATE<option>CREATE</select><label><input type='checkbox' name='routines' value='1'>Routines</label><label><input type='checkbox' name='events' value='1'>Events</label><tr><th>Tables<td><select name='table_style'><option><option>DROP+CREATE<option selected>CREATE</select><label><input type='checkbox' name='auto_increment' value='1'>Auto Increment</label><label><input type='checkbox' name='triggers' value='1' checked>Triggers</label><tr><th>Data<td><select name='data_style'><option><option>TRUNCATE+INSERT<option selected>INSERT<option>INSERT+UPDATE</select></table>
+<p><input type="submit" value="Export">
+<input type="hidden" name="token" value="432115:381196">
+
+<table cellspacing="0">
+<thead><tr><th style='text-align: left;'><label class='block'><input type='checkbox' id='check-tables' checked onclick='formCheck(this, /^tables\[/);'>Tables</label><th style='text-align: right;'><label class='block'>Data<input type='checkbox' id='check-data' checked onclick='formCheck(this, /^data\[/);'></label></thead>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='banner_images' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">banner_images</label><td align='right'><label class='block'><span id='Rows-banner_images'></span><input type='checkbox' name='data[]' value='banner_images' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='blogs' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">blogs</label><td align='right'><label class='block'><span id='Rows-blogs'></span><input type='checkbox' name='data[]' value='blogs' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='blog_images' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">blog_images</label><td align='right'><label class='block'><span id='Rows-blog_images'></span><input type='checkbox' name='data[]' value='blog_images' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='campaigns' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">campaigns</label><td align='right'><label class='block'><span id='Rows-campaigns'></span><input type='checkbox' name='data[]' value='campaigns' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='events' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">events</label><td align='right'><label class='block'><span id='Rows-events'></span><input type='checkbox' name='data[]' value='events' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='featured_section' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">featured_section</label><td align='right'><label class='block'><span id='Rows-featured_section'></span><input type='checkbox' name='data[]' value='featured_section' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='gallery' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">gallery</label><td align='right'><label class='block'><span id='Rows-gallery'></span><input type='checkbox' name='data[]' value='gallery' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='gallery_images' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">gallery_images</label><td align='right'><label class='block'><span id='Rows-gallery_images'></span><input type='checkbox' name='data[]' value='gallery_images' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='gallery_videos' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">gallery_videos</label><td align='right'><label class='block'><span id='Rows-gallery_videos'></span><input type='checkbox' name='data[]' value='gallery_videos' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='hub' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">hub</label><td align='right'><label class='block'><span id='Rows-hub'></span><input type='checkbox' name='data[]' value='hub' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='modules' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">modules</label><td align='right'><label class='block'><span id='Rows-modules'></span><input type='checkbox' name='data[]' value='modules' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='newsletter_subscription' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">newsletter_subscription</label><td align='right'><label class='block'><span id='Rows-newsletter_subscription'></span><input type='checkbox' name='data[]' value='newsletter_subscription' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='partners' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">partners</label><td align='right'><label class='block'><span id='Rows-partners'></span><input type='checkbox' name='data[]' value='partners' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='projects' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">projects</label><td align='right'><label class='block'><span id='Rows-projects'></span><input type='checkbox' name='data[]' value='projects' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='roles' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">roles</label><td align='right'><label class='block'><span id='Rows-roles'></span><input type='checkbox' name='data[]' value='roles' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='users' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">users</label><td align='right'><label class='block'><span id='Rows-users'></span><input type='checkbox' name='data[]' value='users' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='users_roles' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">users_roles</label><td align='right'><label class='block'><span id='Rows-users_roles'></span><input type='checkbox' name='data[]' value='users_roles' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='user_application' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-tables&#039;);">user_application</label><td align='right'><label class='block'><span id='Rows-user_application'></span><input type='checkbox' name='data[]' value='user_application' checked onclick="checkboxClick(event, this); formUncheck(&#039;check-data&#039;);"></label>
+<script type='text/javascript'>ajaxSetHtml('adminer.php?server=localhost&username=root&db=ags_monitor&script=db');</script>
+</table>
+</form>
+<p><a href='adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;dump=gallery%25'>gallery</a> <a href='adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;dump=users%25'>users</a></div>
+
+<form action="" method="post">
+<p class="logout">
+<input type="submit" name="logout" value="Logout" id="logout">
+<input type="hidden" name="token" value="432115:381196">
+</p>
+</form>
+<div id="menu">
+<h1>
+<a href='https://www.adminer.org/' target='_blank' id='h1'>Adminer</a> <span class="version">4.2.4</span>
+<a href="https://www.adminer.org/#download" target="_blank" id="version">4.2.5</a>
+</h1>
+<script type="text/javascript" src="adminer.php?file=jush.js&amp;version=4.2.4&amp;driver=mysql"></script>
+<script type="text/javascript">
+var jushLinks = { sql: [ 'adminer.php?server=localhost&username=root&db=ags_monitor&table=$&', /\b(banner_images|blogs|blog_images|campaigns|events|featured_section|gallery|gallery_images|gallery_videos|hub|modules|newsletter_subscription|partners|projects|roles|users|users_roles|user_application)\b/g ] };
+jushLinks.bac = jushLinks.sql;
+jushLinks.bra = jushLinks.sql;
+jushLinks.sqlite_quo = jushLinks.sql;
+jushLinks.mssql_bra = jushLinks.sql;
+bodyLoad('5.5');
+</script>
+<form action="">
+<p id="dbs">
+<input type="hidden" name="server" value="localhost"><input type="hidden" name="username" value="root"><span title='database'>DB</span>: <select name='db' onmousedown='dbMouseDown(event, this);' onchange='dbChange(this);'><option value=""><option selected>ags_monitor<option>dashboard<option>information_schema<option>laravel_admin<option>mysql<option>performance_schema<option>snakerivershuttle<option>test</select><input type='submit' value='Use' class='hidden'>
+<input type="hidden" name="dump" value=""></p></form>
+<p class='links'><a href='adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;sql='>SQL command</a>
+<a href='adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;import='>Import</a>
+<a href='adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;dump=' id='dump' class='active '>Export</a>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;create=">Create table</a>
+<p id='tables' onmouseover='menuOver(this, event);' onmouseout='menuOut(this);'>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=banner_images" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=banner_images" title='Show structure'>banner_images</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=blogs" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=blogs" title='Show structure'>blogs</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=blog_images" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=blog_images" title='Show structure'>blog_images</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=campaigns" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=campaigns" title='Show structure'>campaigns</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=events" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=events" title='Show structure'>events</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=featured_section" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=featured_section" title='Show structure'>featured_section</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=gallery" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=gallery" title='Show structure'>gallery</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=gallery_images" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=gallery_images" title='Show structure'>gallery_images</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=gallery_videos" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=gallery_videos" title='Show structure'>gallery_videos</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=hub" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=hub" title='Show structure'>hub</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=modules" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=modules" title='Show structure'>modules</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=newsletter_subscription" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=newsletter_subscription" title='Show structure'>newsletter_subscription</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=partners" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=partners" title='Show structure'>partners</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=projects" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=projects" title='Show structure'>projects</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=roles" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=roles" title='Show structure'>roles</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=users" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=users" title='Show structure'>users</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=users_roles" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=users_roles" title='Show structure'>users_roles</a><br>
+<a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;select=user_application" class='select'>select</a> <a href="adminer.php?server=localhost&amp;username=root&amp;db=ags_monitor&amp;table=user_application" title='Show structure'>user_application</a><br>
+</div>
+<script type="text/javascript">setupSubmitHighlight(document);</script>

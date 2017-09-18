@@ -1,0 +1,11 @@
+<html>
+<body>
+	<p>
+		{{$msg->message}}
+	</p>
+	From,
+	<br>
+	{{$msg->name}}
+	<br>
+</body>
+</html>
